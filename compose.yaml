@@ -1,0 +1,8 @@
+services:
+  rust:
+    build: .
+    volumes:
+      - ./:/var/www/app/
+    command: /bin/bash -c "cargo run"
+    tty: true
+    stdin_open: true
