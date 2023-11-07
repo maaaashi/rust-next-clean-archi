@@ -2,7 +2,9 @@ services:
   rust:
     build: .
     volumes:
-      - ./:/var/www/app/
+      - ./rust:/var/www/app/
     command: /bin/bash -c "cargo run"
     tty: true
     stdin_open: true
+    ports: 
+     - 3000:3000
