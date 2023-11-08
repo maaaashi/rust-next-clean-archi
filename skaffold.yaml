@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta16
+kind: Config
+metadata:
+  name: my-application
+build:
+  artifacts:
+  - image: nextjs-app-image
+    context: nextjs-app
+    docker:
+      dockerfile: Dockerfile.web-app
+  - image: rust-api-image
+    context: rust-api
+    docker:
+      dockerfile: Dockerfile.api
+deploy:
+  kubectl:
+    manifests:
+    - k8s/*.yaml
