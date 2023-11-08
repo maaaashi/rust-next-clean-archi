@@ -7,13 +7,13 @@ ARG GID=1000
 RUN groupadd -g $GID $GROUPNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID $USERNAME
 
-COPY ./rust /app
+COPY ./ /app
 RUN chown -R $USERNAME:$USERNAME /app
 
 WORKDIR /app
 
 USER $USERNAME
 
-RUN cargo install --path .
+RUN bash ./cargo-build.sh
 
-CMD ['cargo', 'run']
+CMD ["cargo", "run"]

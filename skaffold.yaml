@@ -5,13 +5,9 @@ metadata:
 build:
   artifacts:
   - image: nextjs-app-image
-    context: nextjs-app
-    docker:
-      dockerfile: Dockerfile.web-app
+    context: app
   - image: rust-api-image
-    context: rust-api
-    docker:
-      dockerfile: Dockerfile.api
+    context: api
 deploy:
   kubectl:
     manifests:

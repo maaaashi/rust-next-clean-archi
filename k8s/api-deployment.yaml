@@ -15,4 +15,4 @@ spec:
       - name: rust-api
         image: rust-api-image
         ports:
-        - containerPort: 8080
+        - containerPort: 3001

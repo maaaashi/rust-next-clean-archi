@@ -1,7 +1,7 @@
 # Dockerfile.nextjs
 FROM node:alpine
 
-COPY ./app /app
+COPY ./ /app
 WORKDIR /app
 
 RUN npm install
