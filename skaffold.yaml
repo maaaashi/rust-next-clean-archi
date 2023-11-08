@@ -12,3 +12,14 @@ deploy:
   kubectl:
     manifests:
     - k8s/*.yaml
+portForward:
+  - resourceType: service
+    resourceName: nextjs-app-service
+    namespace: default
+    port: 3000
+    localPort: 3000
+  - resourceType: service
+    resourceName: rust-api-service
+    namespace: default
+    port: 3001
+    localPort: 3001
